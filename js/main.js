@@ -104,19 +104,18 @@ function filtrarPorSexo(){
     });
     }
     else{
-        alert(`No hay usuarios con el filtro indicado`);
+        alert("No hay usuarios con el filtro indicado");
     }
 }
 
 function filtrarPorNombre(){
     let filtro=prompt("Ingrese el nombre a buscar");
-    clientesFiltrados=clientesFit.filter(clientes=> clientes.nombre.toLowerCase()===filtro.toLowerCase());
-    if (clientesFiltrados){
-    clientesFiltrados.forEach(cliente => {
+    //Se realizo cambio de filter por find para buscar por nombre, este regresa el primer elemento del array en este caso el objeto cliente segun la busqueda
+    clientesFiltrados=clientesFit.find(clientes=> clientes.nombre.toLowerCase()===filtro.toLowerCase());
+    if (clientesFiltrados){   
     mostrarDatosFiltrados(cliente,"Por Nombre");
-    });
     }    else{
-        alert(`No hay usuarios con el filtro indicado`);
+        alert("No hay usuarios con el filtro indicado");
     }
 }
 
@@ -130,7 +129,7 @@ function filtrarIMC(){
     });
     }
     else{
-        alert(`No hay usuarios con el filtro indicado`)
+        alert("No hay usuarios con el filtro indicado")
     }
 }
 
